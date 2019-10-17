@@ -1,0 +1,23 @@
+﻿<ContentPage x:Class="Barbital.Views.NewsListView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="News"
+    BackgroundColor="White"
+    Visual="Material"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image.Source>
+                    <FontImageSource
+                        FontFamily="MDL2.ttf#MDL2"
+                        Glyph="&#xEC05;"
+                        Size="128"
+                        Color="#00574B"/>
+                </Image.Source>
+            </Image>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

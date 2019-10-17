@@ -1,0 +1,45 @@
+﻿<ContentPage x:Class="Barbital.Views.PlayerView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    Title="{Binding PageTitle}"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="White"
+    Visual="Material"
+    mc:Ignorable="d">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Account">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="MDL2.ttf#MDL2"
+                    Glyph="&#xE13D;"
+                    Size="22"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+
+        <ToolbarItem Text="Settings">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="MDL2.ttf#MDL2"
+                    Glyph="&#xE115;"
+                    Size="22"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Image HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image.Source>
+                    <FontImageSource
+                        FontFamily="MDL2.ttf#MDL2"
+                        Glyph="&#xEC05;"
+                        Size="128"
+                        Color="#00574B"/>
+                </Image.Source>
+            </Image>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

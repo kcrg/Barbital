@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="MainTheme.Splash" parent ="MainTheme.Base">
+    <item name="android:windowBackground">@drawable/launch_screen</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+    <item name="android:windowLightStatusBar">false</item>
+  </style>
+  
+  <style name="MainTheme" parent="MainTheme.Base">
+    <item name="android:statusBarColor">@color/colorPrimary</item>
+  </style>
+  
+  <!-- Base theme applied no matter what API -->
+  <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
+    <item name="windowNoTitle">true</item>
+    <!--We will be using the toolbar so no need to show ActionBar-->
+    <item name="windowActionBar">false</item>
+    <item name="windowActionModeOverlay">true</item>
+    
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+  </style>
+
+  <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">@color/colorAccent</item>
+  </style>
+</resources>
