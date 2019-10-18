@@ -9,20 +9,20 @@ namespace Barbital.Controls
             InitializeComponent();
         }
 
-        public static readonly BindableProperty FontIconProperty = BindableProperty.Create(nameof(FontIcon), typeof(string), typeof(BaseToolbarItem), default(string), BindingMode.OneWay);
-        public string FontIcon
+        public static readonly BindableProperty GlyphProperty = BindableProperty.Create(nameof(Glyph), typeof(string), typeof(BaseToolbarItem), default(string), BindingMode.OneWay);
+        public string Glyph
         {
-            get => (string)GetValue(FontIconProperty);
-            set => SetValue(FontIconProperty, value);
+            get => (string)GetValue(GlyphProperty);
+            set => SetValue(GlyphProperty, value);
         }
 
         protected override void OnPropertyChanged(string propertyName = null)
         {
             base.OnPropertyChanged(propertyName);
 
-            if (propertyName == FontIconProperty.PropertyName)
+            if (propertyName == GlyphProperty.PropertyName)
             {
-                fontImageSource.Glyph = FontIcon;
+                fontImageSource.Glyph = Glyph;
             }
         }
     }

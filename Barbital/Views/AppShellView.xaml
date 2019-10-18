@@ -15,11 +15,11 @@
     Shell.TitleColor="White"
     Visual="Material">
     <TabBar>
-        <controls:BaseShellTab Title="{Binding PlayerTabTitle}" FontIcon="{StaticResource PlayIcon}">
+        <controls:BaseShellTab Title="{Binding PlayerTabTitle}" Glyph="{StaticResource PlayIcon}">
             <ShellContent ContentTemplate="{DataTemplate views:PlayerView}"/>
         </controls:BaseShellTab>
 
-        <controls:BaseShellTab Title="{Binding NewsTabTitle}" FontIcon="{StaticResource NewsIcon}">
+        <controls:BaseShellTab Title="{Binding NewsTabTitle}" Glyph="{StaticResource NewsIcon}">
             <ShellContent ContentTemplate="{DataTemplate views:NewsListView}"/>
         </controls:BaseShellTab>
     </TabBar>

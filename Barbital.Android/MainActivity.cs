@@ -20,6 +20,8 @@ namespace Barbital.Droid
 
             base.OnCreate(bundle);
 
+            Forms.SetFlags("CollectionView_Experimental");
+
             Forms.Init(this, bundle);
             FormsMaterial.Init(this, bundle);
             //Xamarin.Essentials.Platform.Init(this, bundle);

@@ -11,8 +11,8 @@
     Visual="Material"
     mc:Ignorable="d">
     <ContentPage.ToolbarItems>
-        <controls:BaseToolbarItem FontIcon="{StaticResource AccountIcon}" Text="Account"/>
-        <controls:BaseToolbarItem FontIcon="{StaticResource SettingsIcon}" Text="Settings"/>
+        <controls:BaseToolbarItem Glyph="{StaticResource AccountIcon}" Text="Account"/>
+        <controls:BaseToolbarItem Glyph="{StaticResource SettingsIcon}" Text="Settings"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
