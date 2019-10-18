@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--  Primary Colors  -->
+    <Color x:Key="ColorPrimary">#008577</Color>
+    <Color x:Key="ColorPrimaryDark">#00574B</Color>
+    <Color x:Key="ColorPrimaryLight">#4cb5a6</Color>
+
+    <!--  Secondary Colors  -->
+    <Color x:Key="ColorSecondary">#D81B60</Color>
+    <Color x:Key="ColorSecondaryDark">#a00037</Color>
+    <Color x:Key="ColorSecondarylight">#ff5c8d</Color>
+
+    <!--  Accent Colors  -->
+</ResourceDictionary>

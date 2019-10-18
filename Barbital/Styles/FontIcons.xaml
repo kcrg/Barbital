@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--  Icons Font  -->
+    <OnPlatform x:Key="UWPIcons" x:TypeArguments="x:String">
+        <On Platform="Android" Value="MDL2.ttf#MDL2"/>
+        <On Platform="iOS" Value="MDL2"/>
+        <On Platform="UWP" Value=""/>
+    </OnPlatform>
+
+    <!--  Player Icons  -->
+    <x:String x:Key="PlayIcon">&#xEDB5;</x:String>
+    <x:String x:Key="PauseIcon">#00574B</x:String>
+    <x:String x:Key="StopIcon">#4cb5a6</x:String>
+
+    <!--  News Icons  -->
+    <x:String x:Key="NewsIcon">&#xE7BC;</x:String>
+
+    <!--  Account Icons  -->
+    <x:String x:Key="AccountIcon">&#xE13D;</x:String>
+    <x:String x:Key="SettingsIcon">&#xE115;</x:String>
+
+    <!--  Other Icons  -->
+</ResourceDictionary>

@@ -1,0 +1,9 @@
+﻿<Tab x:Class="Barbital.Controls.BaseShellTab"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Tab.Icon>
+        <FontImageSource x:Name="fontImageSource"
+            FontFamily="{StaticResource UWPIcons}"
+            Size="{StaticResource TabbarIconsSize}"/>
+    </Tab.Icon>
+</Tab>

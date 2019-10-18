@@ -1,37 +1,26 @@
 ﻿<Shell x:Class="Barbital.Views.AppShellView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Barbital.Controls"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     xmlns:views="clr-namespace:Barbital.Views"
     prism:ViewModelLocator.AutowireViewModel="True"
-    Shell.BackgroundColor="#008577"
+    Shell.BackgroundColor="{StaticResource ColorPrimary}"
     Shell.FlyoutBehavior="Disabled"
     Shell.ForegroundColor="White"
-    Shell.TabBarBackgroundColor="#008577"
-    Shell.TabBarDisabledColor="#00574B"
+    Shell.TabBarBackgroundColor="{StaticResource ColorPrimary}"
+    Shell.TabBarDisabledColor="{StaticResource ColorPrimaryDark}"
     Shell.TabBarForegroundColor="White"
-    Shell.TabBarUnselectedColor="#00574B"
+    Shell.TabBarUnselectedColor="{StaticResource ColorPrimaryLight}"
     Shell.TitleColor="White"
     Visual="Material">
     <TabBar>
-        <Tab Title="{Binding PlayerTabTitle}">
-            <Tab.Icon>
-                <FontImageSource
-                    FontFamily="MDL2.ttf#MDL2"
-                    Glyph="&#xEDB5;"
-                    Size="64"/>
-            </Tab.Icon>
+        <controls:BaseShellTab Title="{Binding PlayerTabTitle}" FontIcon="{StaticResource PlayIcon}">
             <ShellContent ContentTemplate="{DataTemplate views:PlayerView}"/>
-        </Tab>
+        </controls:BaseShellTab>
 
-        <Tab Title="{Binding NewsTabTitle}">
-            <Tab.Icon>
-                <FontImageSource
-                    FontFamily="MDL2.ttf#MDL2"
-                    Glyph="&#xE7BC;"
-                    Size="64"/>
-            </Tab.Icon>
+        <controls:BaseShellTab Title="{Binding NewsTabTitle}" FontIcon="{StaticResource NewsIcon}">
             <ShellContent ContentTemplate="{DataTemplate views:NewsListView}"/>
-        </Tab>
+        </controls:BaseShellTab>
     </TabBar>
 </Shell>
