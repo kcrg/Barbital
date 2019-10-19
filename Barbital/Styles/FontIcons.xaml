@@ -10,6 +10,7 @@
     <x:String x:Key="PlayIcon">&#xEDB5;</x:String>
     <x:String x:Key="PauseIcon">#00574B</x:String>
     <x:String x:Key="StopIcon">#4cb5a6</x:String>
+    <x:String x:Key="LiveIcon">&#xE7C8;</x:String>
 
     <!--  News Icons  -->
     <x:String x:Key="NewsIcon">&#xE7BC;</x:String>

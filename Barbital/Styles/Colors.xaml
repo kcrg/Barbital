@@ -8,7 +8,7 @@
     <!--  Secondary Colors  -->
     <Color x:Key="ColorSecondary">#D81B60</Color>
     <Color x:Key="ColorSecondaryDark">#a00037</Color>
-    <Color x:Key="ColorSecondarylight">#ff5c8d</Color>
+    <Color x:Key="ColorSecondaryLight">#ff5c8d</Color>
 
     <!--  Accent Colors  -->
 </ResourceDictionary>

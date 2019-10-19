@@ -20,7 +20,8 @@ namespace Barbital.Services.Implementation
                 shedule.Add(new ScheduleModel()
                 {
                     Title = HttpUtility.HtmlDecode(node.SelectSingleNode("./td[@class='a3 tytul']").InnerText),
-                    Time = DateTime.ParseExact(node.SelectSingleNode("./td[@class='a2 godzina']").InnerText, "HH:mm", null)
+                    Time = HttpUtility.HtmlDecode(node.SelectSingleNode("./td[@class='a2 godzina']").InnerText),
+                    IsNow = node.OuterHtml.Contains("<tr class='cTeraz'>")
                 });
             }
 
