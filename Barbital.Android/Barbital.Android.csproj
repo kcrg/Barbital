@@ -101,6 +101,7 @@
     <AndroidAsset Include="Assets\segoeB.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidAsset Include="Resources\values\segoe.ttf" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />

@@ -1,0 +1,72 @@
+﻿<!--  Require ItemsSource="{Binding Schedule}"  -->
+<DataTemplate x:Class="Barbital.Controls.Cells.ScheduleCell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentView>
+        <Frame
+            Margin="8"
+            Padding="12,6,12,8"
+            CornerRadius="5">
+            <Frame.Triggers>
+                <DataTrigger
+                    Binding="{Binding IsNow}"
+                    TargetType="Frame"
+                    Value="true">
+                    <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimary}"/>
+                </DataTrigger>
+            </Frame.Triggers>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label
+                    VerticalTextAlignment="Center"
+                    FontFamily="{StaticResource UWPIcons}"
+                    FontSize="22"
+                    IsVisible="{Binding IsNow}"
+                    Text="{StaticResource PlayIcon}"
+                    TextColor="{StaticResource ColorPrimaryLight}"/>
+
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    FontFamily="{StaticResource BoldFont}"
+                    FontSize="22"
+                    Text="{Binding Time}"
+                    TextColor="{StaticResource ColorPrimary}">
+                    <Label.Triggers>
+                        <DataTrigger
+                            Binding="{Binding IsNow}"
+                            TargetType="Label"
+                            Value="true">
+                            <Setter Property="TextColor" Value="White"/>
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+
+                <Label
+                    Grid.Row="1"
+                    VerticalTextAlignment="Center"
+                    FontFamily="{StaticResource RegularFont}"
+                    FontSize="16"
+                    HorizontalTextAlignment="Center"
+                    LineBreakMode="TailTruncation"
+                    MaxLines="2"
+                    Text="{Binding Title}"
+                    TextColor="Black">
+                    <Label.Triggers>
+                        <DataTrigger
+                            Binding="{Binding IsNow}"
+                            TargetType="Label"
+                            Value="true">
+                            <Setter Property="TextColor" Value="White"/>
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+            </Grid>
+        </Frame>
+    </ContentView>
+</DataTemplate>

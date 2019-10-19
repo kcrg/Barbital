@@ -1,4 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--  Other Fonts  -->
+    <OnPlatform x:Key="RegularFont" x:TypeArguments="x:String">
+        <On Platform="Android" Value="segoe.ttf#segoe"/>
+        <On Platform="iOS" Value="segoe"/>
+        <On Platform="UWP" Value=""/>
+    </OnPlatform>
+    <OnPlatform x:Key="BoldFont" x:TypeArguments="x:String">
+        <On Platform="Android" Value="segoeB.ttf#segoeB"/>
+        <On Platform="iOS" Value="segoeB"/>
+        <On Platform="UWP" Value=""/>
+    </OnPlatform>
+    <OnPlatform x:Key="LightFont" x:TypeArguments="x:String">
+        <On Platform="Android" Value="segoeL.ttf#segoeL"/>
+        <On Platform="iOS" Value="segoeL"/>
+        <On Platform="UWP" Value=""/>
+    </OnPlatform>
+
     <!--  Icons Font  -->
     <OnPlatform x:Key="UWPIcons" x:TypeArguments="x:String">
         <On Platform="Android" Value="MDL2.ttf#MDL2"/>
@@ -13,11 +30,13 @@
     <x:String x:Key="LiveIcon">&#xE7C8;</x:String>
 
     <!--  News Icons  -->
-    <x:String x:Key="NewsIcon">&#xE7BC;</x:String>
 
-    <!--  Account Icons  -->
+    <!--  Toolbar Icons  -->
     <x:String x:Key="AccountIcon">&#xE13D;</x:String>
     <x:String x:Key="SettingsIcon">&#xE115;</x:String>
+    <x:String x:Key="MoreIcon">&#xE712;</x:String>
 
-    <!--  Other Icons  -->
+    <!--  Tabbed Icons  -->
+    <x:String x:Key="NewsIcon">&#xE7BC;</x:String>
+    <x:String x:Key="HomeIcon">&#xE80F;</x:String>
 </ResourceDictionary>

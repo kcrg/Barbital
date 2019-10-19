@@ -15,7 +15,7 @@
     Shell.TitleColor="White"
     Visual="Material">
     <TabBar>
-        <controls:BaseShellTab Title="{Binding PlayerTabTitle}" Glyph="{StaticResource PlayIcon}">
+        <controls:BaseShellTab Title="{Binding PlayerTabTitle}" Glyph="{StaticResource HomeIcon}">
             <ShellContent ContentTemplate="{DataTemplate views:PlayerView}"/>
         </controls:BaseShellTab>
 

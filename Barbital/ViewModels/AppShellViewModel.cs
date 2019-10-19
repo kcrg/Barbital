@@ -9,7 +9,7 @@ namespace Barbital.ViewModels
 
         public AppShellViewModel()
         {
-            PlayerTabTitle = "Player";
+            PlayerTabTitle = "Home";
             NewsTabTitle = "News";
         }
     }

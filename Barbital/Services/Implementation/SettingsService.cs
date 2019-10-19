@@ -6,15 +6,16 @@ namespace Barbital.Services.Implementation
     {
         public SettingsService()
         {
-            //if (this["Initialized"] is false)
-            //{
-            ResetConfig();
-            //}
+            if (this["Initialized"] is false)
+            {
+                ResetConfig();
+            }
         }
 
+        // add OnboardingPage
         public void ResetConfig()
         {
-            this["RadioName"] = "placeholder radio name";
+            this["RadioName"] = "Radio Maryja";
 
             this["StreamUri"] = "http://62.133.128.18:8040/";
             this["NewsfeedUri"] = "https://www.centrumxp.pl/feed.xml";

@@ -22,6 +22,9 @@
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
+
+    <!-- Custom fonts here. -->
+    <item name="fontFamily">@segoe.ttf</item>
     
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
   </style>
