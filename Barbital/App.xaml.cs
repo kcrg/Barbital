@@ -20,7 +20,14 @@ namespace Barbital
         {
             InitializeComponent();
 
-            MainPage = new AppShellView();
+            if (Current.Properties["Initialized"] is false)
+            {
+                MainPage = new OnBoardingView();
+            }
+            else
+            {
+                MainPage = new AppShellView();
+            }
 
             Routing.RegisterRoute("appshellview", typeof(AppShellView));
             Routing.RegisterRoute("playerview", typeof(PlayerView));

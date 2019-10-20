@@ -1,6 +1,7 @@
 ﻿<ContentPage x:Class="Barbital.Views.PlayerView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
     xmlns:cells="clr-namespace:Barbital.Controls.Cells"
     xmlns:controls="clr-namespace:Barbital.Controls"
     xmlns:conv="clr-namespace:Barbital.Converters"
@@ -16,6 +17,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <conv:NegateBoolConverter x:Key="NegateBoolConverter"/>
+            <conv:CarouselPositionConverter x:Key="CarouselPositionConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -37,15 +39,19 @@
                     FontFamily="{StaticResource BoldFont}"
                     FontSize="22"
                     IsVisible="{Binding IsLoading, Converter={StaticResource NegateBoolConverter}}"
-                    Text="Radio Maryja Schedule"
+                    Text="Ramówka"
                     TextColor="{StaticResource ColorPrimaryDark}"/>
-                <CarouselView
+                <!--  TODO: position  -->
+                <CarouselView x:Name="scheduleView"
                     HeightRequest="120"
-                    EmptyView="Check your internet connection."
+                    CurrentItem="{Binding SchedulePosition}"
+                    IsBounceEnabled="True"
+                    IsScrollAnimated="True"
                     ItemSizingStrategy="MeasureFirstItem"
                     ItemsSource="{Binding Schedule}"
-                    ItemsUpdatingScrollMode="KeepItemsInView"
-                    PeekAreaInsets="80">
+                    PeekAreaInsets="80"
+                    PositionChangedCommand="{Binding SchedulePositionChanged}"
+                    PositionChangedCommandParameter="">
                     <CarouselView.ItemTemplate>
                         <cells:ScheduleCell/>
                     </CarouselView.ItemTemplate>

@@ -21,7 +21,8 @@ namespace Barbital.Services.Implementation
                 {
                     Title = HttpUtility.HtmlDecode(node.SelectSingleNode("./td[@class='a3 tytul']").InnerText),
                     Time = HttpUtility.HtmlDecode(node.SelectSingleNode("./td[@class='a2 godzina']").InnerText),
-                    IsNow = node.OuterHtml.Contains("<tr class='cTeraz'>")
+                    IsNow = node.OuterHtml.Contains("<tr class='cTeraz'>"),
+                    ID = shedule.Count
                 });
             }
 

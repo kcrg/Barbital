@@ -1,0 +1,21 @@
+﻿<ContentPage x:Class="Barbital.Views.OnBoardingView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="{StaticResource ColorPrimary}"
+    Visual="Material"
+    mc:Ignorable="d">
+    <CarouselView>
+        <CarouselView.ItemTemplate>
+            <DataTemplate>
+                <Grid>
+                    <Label
+                        FontFamily="{StaticResource UWPIcons}"
+                        Text="{StaticResource PlayIcon}"
+                        TextColor="White"/>
+                </Grid>
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+    </CarouselView>
+</ContentPage>
