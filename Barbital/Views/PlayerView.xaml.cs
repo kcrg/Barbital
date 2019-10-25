@@ -8,5 +8,12 @@ namespace Barbital.Views
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            //scheduleView.ScrollTo(); = (BindingContext as PlayerViewModel).IsNowPosition;
+        }
     }
 }

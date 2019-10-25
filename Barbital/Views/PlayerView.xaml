@@ -7,6 +7,7 @@
     xmlns:conv="clr-namespace:Barbital.Converters"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:Barbital.Models"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     Title="{Binding PageTitle}"
     prism:ViewModelLocator.AutowireViewModel="True"
@@ -45,13 +46,10 @@
                 <CarouselView x:Name="scheduleView"
                     HeightRequest="120"
                     CurrentItem="{Binding SchedulePosition}"
-                    IsBounceEnabled="True"
-                    IsScrollAnimated="True"
                     ItemSizingStrategy="MeasureFirstItem"
                     ItemsSource="{Binding Schedule}"
                     PeekAreaInsets="80"
-                    PositionChangedCommand="{Binding SchedulePositionChanged}"
-                    PositionChangedCommandParameter="">
+                    Position="{Binding SchedulePosition}">
                     <CarouselView.ItemTemplate>
                         <cells:ScheduleCell/>
                     </CarouselView.ItemTemplate>

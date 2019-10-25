@@ -1,7 +1,9 @@
 ﻿<!--  Require ItemsSource="{Binding Schedule}"  -->
 <DataTemplate x:Class="Barbital.Controls.Cells.ScheduleCell"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:Barbital.Models"
+    x:DataType="models:ScheduleModel">
 
     <ContentView Visual="Material">
         <Frame

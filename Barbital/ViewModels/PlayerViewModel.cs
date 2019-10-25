@@ -2,14 +2,14 @@
 using Barbital.Services;
 using System;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 namespace Barbital.ViewModels
 {
     internal class PlayerViewModel : BaseViewModel
     {
         private bool _isLoading = true;
-        private int _schedulePosition = 0;
+        private int _schedulePosition;
+        private int EarlySchedulePosition;
 
         private readonly INewsfeedService _newsfeedManager;
         private readonly ISettingsService _settingsService;
@@ -45,11 +45,15 @@ namespace Barbital.ViewModels
         {
             foreach (ScheduleModel schedule in await _newsfeedManager.LoadScheduleAsync(new Uri(settingsService[Setting.ScheduleUri].ToString())))
             {
-                SchedulePosition = schedule.IsNow ? schedule.ID : 0;
+                if (schedule.IsNow)
+                {
+                    EarlySchedulePosition = schedule.ID;
+                }
                 Schedule.Add(schedule);
             }
-            await Task.Delay(50);
             IsLoading = false;
+
+            SchedulePosition = EarlySchedulePosition;
         }
     }
 }
