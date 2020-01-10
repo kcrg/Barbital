@@ -1,30 +1,23 @@
 ﻿using Barbital.Models;
 using Barbital.Services;
+using PropertyChanged;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace Barbital.ViewModels
 {
-    internal class PlayerViewModel : BaseViewModel
+    [AddINotifyPropertyChangedInterface]
+    public class PlayerViewModel : BaseViewModel
     {
-        private bool _isLoading = true;
-        private int _schedulePosition;
-        private int EarlySchedulePosition;
-
         private readonly INewsfeedService _newsfeedManager;
         private readonly ISettingsService _settingsService;
 
-        public bool IsLoading
-        {
-            get => _isLoading;
-            set => SetProperty(ref _isLoading, value);
-        }
-
-        public int SchedulePosition
-        {
-            get => _schedulePosition;
-            set => SetProperty(ref _schedulePosition, value);
-        }
+        public bool IsSheduleLoading { get; set; }
+        public ScheduleModel IsNowItem { get; set; }
 
         public ObservableCollection<ScheduleModel> Schedule { get; private set; }
         //public DelegateCommand PlayCommand { get; private set; }
@@ -38,22 +31,29 @@ namespace Barbital.ViewModels
 
             PageTitle = _settingsService[Setting.RadioName].ToString();
 
-            LoadFeed(settingsService);
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                await GetSheduleFeed();
+            });
         }
 
-        public async void LoadFeed(ISettingsService settingsService)
+        public async Task GetSheduleFeed()
         {
-            foreach (ScheduleModel schedule in await _newsfeedManager.LoadScheduleAsync(new Uri(settingsService[Setting.ScheduleUri].ToString())))
+            IsSheduleLoading = true;
+
+            IList<ScheduleModel> ScheduleList = await _newsfeedManager.LoadScheduleAsync(new Uri(_settingsService[Setting.ScheduleUri].ToString()));
+            foreach (ScheduleModel schedule in ScheduleList)
             {
-                if (schedule.IsNow)
-                {
-                    EarlySchedulePosition = schedule.ID;
-                }
                 Schedule.Add(schedule);
             }
-            IsLoading = false;
+            IsSheduleLoading = false;
 
-            SchedulePosition = EarlySchedulePosition;
+            IsNowItem = GetIsNowItem(ScheduleList);
+        }
+
+        public ScheduleModel GetIsNowItem(IList<ScheduleModel> ScheduleList)
+        {
+            return ScheduleList.FirstOrDefault(x => x.IsNow);
         }
     }
 }

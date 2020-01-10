@@ -17,7 +17,7 @@
                         FontFamily="MDL2.ttf#MDL2"
                         Glyph="&#xEC05;"
                         Size="128"
-                        Color="#00574B"/>
+                        Color="{StaticResource ColorPrimaryLight}"/>
                 </Image.Source>
             </Image>
         </StackLayout>

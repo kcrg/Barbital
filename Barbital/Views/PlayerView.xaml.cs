@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using Barbital.Models;
+using Barbital.ViewModels;
+using System.Linq;
+using Xamarin.Forms;
 
 namespace Barbital.Views
 {
@@ -13,7 +16,9 @@ namespace Barbital.Views
         {
             base.OnAppearing();
 
-            //scheduleView.ScrollTo(); = (BindingContext as PlayerViewModel).IsNowPosition;
+            PlayerViewModel viewModel = BindingContext as PlayerViewModel;
+            ScheduleModel isNow = viewModel.Schedule.FirstOrDefault(m => m.IsNow);
+            ScheduleView.ScrollTo(isNow);
         }
     }
 }

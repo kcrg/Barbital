@@ -2,7 +2,7 @@
 
 namespace Barbital.ViewModels
 {
-    internal class BaseViewModel : BindableBase
+    public class BaseViewModel : BindableBase
     {
         public string PageTitle { get; set; }
 

@@ -7,26 +7,34 @@ using System.Web;
 
 namespace Barbital.Services.Implementation
 {
-    internal class NewsfeedService : INewsfeedService
+    public class NewsfeedService : INewsfeedService
     {
         #region Schedule
         public async Task<IList<ScheduleModel>> LoadScheduleAsync(Uri URL)
         {
-            HtmlDocument document = await new HtmlWeb().LoadFromWebAsync(URL.ToString());
-            HtmlNodeCollection nodes = document?.DocumentNode.SelectNodes("//section[@class='av_textblock_section ']/div/table/tbody/tr");
-            List<ScheduleModel> shedule = new List<ScheduleModel>();
-            foreach (HtmlNode node in nodes)
+            try
             {
-                shedule.Add(new ScheduleModel()
+                HtmlDocument document = await new HtmlWeb().LoadFromWebAsync(URL.ToString());
+                HtmlNodeCollection nodes = document?.DocumentNode.SelectNodes("//section[@class='av_textblock_section ']/div/table/tbody/tr");
+                List<ScheduleModel> shedule = new List<ScheduleModel>();
+                foreach (HtmlNode node in nodes)
                 {
-                    Title = HttpUtility.HtmlDecode(node.SelectSingleNode("./td[@class='a3 tytul']").InnerText),
-                    Time = HttpUtility.HtmlDecode(node.SelectSingleNode("./td[@class='a2 godzina']").InnerText),
-                    IsNow = node.OuterHtml.Contains("<tr class='cTeraz'>"),
-                    ID = shedule.Count
-                });
+                    shedule.Add(new ScheduleModel()
+                    {
+                        Title = HttpUtility.HtmlDecode(node.SelectSingleNode("./td[@class='a3 tytul']").InnerText),
+                        Time = HttpUtility.HtmlDecode(node.SelectSingleNode("./td[@class='a2 godzina']").InnerText),
+                        IsNow = node.OuterHtml.Contains("<tr class='cTeraz'>"),
+                    });
+                }
+
+                return shedule;
+            }
+            catch
+            {
+
             }
 
-            return shedule;
+            return null;
         }
         #endregion
     }
