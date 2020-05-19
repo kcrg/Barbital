@@ -1,10 +1,7 @@
-﻿
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace Barbital.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewsListView : ContentPage
     {
         public NewsListView()

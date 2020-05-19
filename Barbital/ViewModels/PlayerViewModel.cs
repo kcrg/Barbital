@@ -19,7 +19,7 @@ namespace Barbital.ViewModels
         public bool IsSheduleLoading { get; set; }
         public ScheduleModel IsNowItem { get; set; }
 
-        public ObservableCollection<ScheduleModel> Schedule { get; private set; }
+        public ObservableCollection<ScheduleModel> Schedule { get; }
         //public DelegateCommand PlayCommand { get; private set; }
 
         public PlayerViewModel(INewsfeedService newsfeedService, ISettingsService settingsService)
@@ -31,13 +31,10 @@ namespace Barbital.ViewModels
 
             PageTitle = _settingsService[Setting.RadioName].ToString();
 
-            MainThread.BeginInvokeOnMainThread(async () =>
-            {
-                await GetSheduleFeed();
-            });
+            MainThread.BeginInvokeOnMainThread(async () => await GetSheduleFeedAsync());
         }
 
-        public async Task GetSheduleFeed()
+        public async Task GetSheduleFeedAsync()
         {
             IsSheduleLoading = true;
 

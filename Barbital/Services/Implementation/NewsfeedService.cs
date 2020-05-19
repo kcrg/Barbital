@@ -31,7 +31,6 @@ namespace Barbital.Services.Implementation
             }
             catch
             {
-
             }
 
             return null;

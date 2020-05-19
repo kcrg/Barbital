@@ -41,7 +41,7 @@
     <AndroidPackageFormat>apk</AndroidPackageFormat>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>false</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
@@ -52,13 +52,16 @@
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <BundleAssemblies>false</BundleAssemblies>
-    <AndroidSupportedAbis>arm64-v8a</AndroidSupportedAbis>
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidLinkTool>r8</AndroidLinkTool>
     <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
+    <AndroidUseDefaultAotProfile>false</AndroidUseDefaultAotProfile>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
-    <AndroidPackageFormat>apk</AndroidPackageFormat>
-    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
+    <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
+    <AndroidPackageFormat>aab</AndroidPackageFormat>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AndroidLinkMode>Full</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -69,26 +72,20 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Prism.Forms">
-      <Version>7.2.0.1422</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData">
-      <Version>2.1.0-rc1</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.AndroidX.Migration">
-      <Version>1.0.0-preview06</Version>
+      <Version>8.0.0.1740-pre</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Essentials">
-      <Version>1.4.0-pre2</Version>
+      <Version>1.5.3.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.144-nightly" />
-    <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1422" />
-    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.6.0.144-nightly" />
-    <PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0-rc1" />
-    <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0-rc1" />
-    <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.0.0-rc1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.815-nightly" />
+    <PackageReference Include="Prism.DryIoc.Forms" Version="8.0.0.1740-pre" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.8.0.815-nightly" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAotProfile Include="$(MSBuildThisFileDirectory)custom.aprof" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

@@ -1,7 +1,6 @@
 ﻿<ContentPage x:Class="Barbital.Views.PlayerView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
     xmlns:cells="clr-namespace:Barbital.Controls.Cells"
     xmlns:controls="clr-namespace:Barbital.Controls"
     xmlns:conv="clr-namespace:Barbital.Converters"
@@ -13,7 +12,6 @@
     prism:ViewModelLocator.AutowireViewModel="True"
     x:DataType="viewmodels:PlayerViewModel"
     BackgroundColor="White"
-    CompressedLayout.IsHeadless="True"
     Visual="Material"
     mc:Ignorable="d">
     <ContentPage.Resources>
@@ -27,8 +25,8 @@
         <controls:BaseToolbarItem Glyph="{StaticResource MoreIcon}" Text="More"/>
     </ContentPage.ToolbarItems>
 
-    <ContentPage.Content CompressedLayout.IsHeadless="True">
-        <Grid CompressedLayout.IsHeadless="True">
+    <ContentPage.Content>
+        <Grid>
             <!--  Player or Details, IDK  -->
 
             <!--  Bottom Schedule CarouselView  -->
@@ -45,6 +43,7 @@
                 <!--  TODO: position  -->
                 <CarouselView x:Name="ScheduleView"
                     HeightRequest="120"
+                    IndicatorView="indicator"
                     ItemsSource="{Binding Schedule}"
                     PeekAreaInsets="80">
                     <CarouselView.ItemTemplate>
@@ -56,15 +55,13 @@
                         </Grid>
                     </CarouselView.EmptyView>
                 </CarouselView>
-                <IndicatorView
+                <IndicatorView x:Name="indicator"
                     Margin="8,4,8,8"
                     HorizontalOptions="Center"
                     IndicatorColor="LightGray"
-                    IndicatorSize="8"
+                    IndicatorSize="3"
                     IndicatorsShape="Circle"
                     ItemsSource="{Binding Schedule}"
-                    ItemsSourceBy="ScheduleView"
-                    MaximumVisible="8"
                     SelectedIndicatorColor="{StaticResource ColorSecondary}"/>
             </StackLayout>
         </Grid>
